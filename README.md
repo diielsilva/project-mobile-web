@@ -19,3 +19,9 @@ no caso do Laravel, os arquivos estão localizados respectivamente em "projeto"/
 OBS: Na parte de exclusão de postagens, o recurso de remover as imagens armazenadas no servidor pode variar de acordo com o SO utilizado, no meu caso foi utilizado o W10 e funcionou perfeitamente, mas poderá ser necessário alterá-la de acordo com o SO.
 
 Com isso já deve ser possível utilizar o sistema.
+
+OBS: Caso esteja usando o sistema Linux, utilize desses passos a seguir, pois será necessário para o laravel conseguir localizar as rotas corretamente.
+
+Habilite mod_rewrite no servidor apache: sudo a2enmod rewrite .
+Edite /etc/apache2/apache2.conf , alterando a diretiva “AllowOverride” para o diretório / var / www (que é a minha raiz principal do documento): AllowOverride All
+Em seguida, reinicie o servidor Apache: service apache2 restart
